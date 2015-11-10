@@ -1,0 +1,35 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+body {
+	background-color: #CCC;
+	text-align:center;
+}
+#bingokaart {
+	height: 622px;
+	width: 594px;
+	margin: 0 auto;
+	padding-top: 178px;
+	padding-left: 35px;
+	padding-right:35px;
+	background-image: url(bingokaart.jpg);
+	background-repeat: no-repeat;
+	margin-bottom:10px;
+}
+.blok {
+	float: left;
+	height: 118px;
+	width: 118px;
+}
+img {
+	display: none;
+}
+#reset {
+	text-transform: uppercase;
+	color: #F00;
+	font-family: Verdana, Geneva, sans-serif;
+	margin-top: 5px;
+	padding: 5px;
+}
