@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ribbit Twitter Clone</title>
+<link href="css/style.css"  rel="stylesheet" >
+<script src="js/jquery-1.11.0.min.js"></script>
+    <script>
+	
+	$(document).ready(function() {
+		//opgave 1
+		$(document).on('click', '#ribbitSubmit', function(){
+			var invoer = $('#ribbitText').val();
+			//opgave 2
+			if(invoer == '' || invoer.length > 140){
+				alert("invoer leeg of meer dan 140 characters");
+			}else {
+				$('#timeline').prepend('<div class="ribbitWrapper"><img class="avatar" src="gfx/user3.png"><span class="name">Alfred J.</span> @username <span class="time">1m ago</span> <a class="deleteRibbit" href="#">Delete Ribbit</a><p>'+ invoer +'</p><p class="kudosBar"><span class="kudosCount">0</span> kudos (<a href="#" class="thumbsUp">+1</a> / <a href="#" class="thumbsDown" >-1</a>)</p></div>');
+				$('#ribbitText').val('');
+			}
+		});
+		//opgave 3
+		$(document).on('click', '.thumbsUp', function(){ 
+   			var kudos = parseInt($(this).siblings('.kudosCount').html());
+			$(this).siblings('.kudosCount').html(++kudos);
+		}); 
+		$(document).on('click', '.thumbsDown', function(){ 
+			var kudos = parseInt($(this).siblings('.kudosCount').html());
+			$(this).siblings('.kudosCount').html(--kudos);
+		});
+		//opgave 4
+		$(document).on('click', '.deleteRibbit', function(){ 
+			$(this).parent().slideUp('slow', function(){ $(this).remove()});
+		});
+		
+  });
+	</script>
+</head>
+<body>
+	<header>
+		<div class="wrapper">
+			<img src="gfx/logo.png">
+			<span>Twitter Clone</span>
+		</div>
+	</header>
+	<div id="content">
+		<div class="wrapper">
+			<div class="panel right">
+				<h1>Uitleg opdracht</h1>
+				<p class="uitleg">
+					Een gebruiker kan een status update schrijven en plaatsen. Andere gebruikers kunnen daarop reageren en deze liken. Realiseer met jQuery of Javascript de volgende functionaliteit. Maak je geen zorgen dat de gebruiker, jij in dit geval, 1000x een thumbs up kan geven.
+					<ul>
+						<li>(5 punten) De gebruiker kan een status update posten en deze wordt direct op de timeline geplaatst (nieuwste boven)</li>						
+						<li>(5 punten) Als een status update leeg is of meer is dan 140 characters, geef dan een foutmelding door middel van een alert</li>
+						<li>(5 punten) De gebruiker kan een status update waarderen door middel van thumbs up (+1) en thumbs down (-1).</li>
+						<li>(5 punten) De gebruiker kan een status update verwijderen.</li>
+					</ul>
+				
+				</p>
+			</div>
+			
+			<div id="ribbits" class="panel left">
+				<h1>Create a Ribbit</h1>
+				<p>
+					<textarea name="text" id="ribbitText"></textarea>
+					<input type="submit" id="ribbitSubmit" value="Ribbit!">
+				</p>
+
+			</div>
+
+			<div id="timeline" class="panel left">
+				
+                <!-- hier komen de updates -->
+                
+				<div class="ribbitWrapper">
+					<img class="avatar" src="gfx/user2.png">
+					<span class="name">Kermit</span> @username <span class="time">1m ago</span> 
+					<a class="deleteRibbit" href="#">Delete Ribbit</a>
+					<p>
+						Cras justo odio, dapibus ac facilisis in, egestas Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. 
+					</p>
+					<p class="kudosBar">
+						<span class="kudosCount">11</span> kudos (<a href="#" class="thumbsUp">+1</a> / <a href="#" class="thumbsDown">-1</a>) 
+					</p>
+				</div>
+
+				<div class="ribbitWrapper">
+					<img class="avatar" src="gfx/user1.png">
+					<span class="name">Frogger</span> @username <span class="time">15m ago</span>
+					<a class="deleteRibbit" href="#">Delete Ribbit</a>
+					<p>
+						Cras justo odio, dapibus ac facilisis in, egestas Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. 
+					</p>
+					<p class="kudosBar">
+						<span class="kudosCount">-7</span> kudos (<a href="#" class="thumbsUp">+1</a> / <a href="#" class="thumbsDown">-1</a>) 
+					</p>
+				</div>
+
+				<div class="ribbitWrapper">
+					<img class="avatar" src="gfx/user2.png">
+					<span class="name">Kermit</span> @username <span class="time">7h ago</span>
+					<a class="deleteRibbit" href="#">Delete Ribbit</a>
+					<p>
+						Cras justo odio, dapibus ac facilisis in, egestas Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. 
+					</p>
+					<p class="kudosBar">
+						<span class="kudosCount">2</span> kudos (<a href="#" class="thumbsUp">+1</a> / <a href="#" class="thumbsDown">-1</a>) 
+					</p>
+					
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="wrapper">
+			Ribbit - A Twitter Clone. Original by: <a href="http://bit.ly/1dFa4Ui">tutsplus</a>
+		</div>
+	</footer>
+</body>
+</html>
