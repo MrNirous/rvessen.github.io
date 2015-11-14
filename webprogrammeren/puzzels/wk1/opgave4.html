@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opgave 3 - Bezorgkosten of niet?</title>
+</head>
+<body>
+	<script>
+		//variabelen aanmaken
+		var aankoopbedrag;
+		var totaalbedrag;
+
+		//gebruiker aankoopbedrag vragen
+		aankoopbedrag = prompt("Wat is het aankoopbedrag?", "vul hier het aankoopbedrag in");
+
+		//met typeof() functie kan je zien dat input van prompt van het type string (tekst) is
+		alert(typeof(aankoopbedrag));
+		
+		//met parseFloat omzetten naar het type number (getal)
+		aankoopbedrag = parseFloat(aankoopbedrag);
+		//nu is het type number geworden
+		alert(typeof(aankoopbedrag));
+
+		//als aankoopbedrag hoger is of gelijk aan 25
+		if(aankoopbedrag >= 25){
+			//gratis bezorgen
+			alert("Gratis bezorgen!");
+		} else {
+		//anders
+			//3.95 erbij
+			totaalbedrag = aankoopbedrag + 3.95
+			alert("Het totaalbedrag incl bezorgkosten is " + totaalbedrag);
+		}
+	</script>
+</body>
+</html>
+
