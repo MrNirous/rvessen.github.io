@@ -217,10 +217,10 @@ function draw() {
     //release2.add(press2);
     //release2.y+=gravity2;
     DpressedY+=gravity2;
-    DpressedX -= 11;
-    //DpressedX -= Math.random(5,13);
-    DpressedY -= 11;
-    //DpressedY -= Math.random(5,14);
+    //DpressedX -= 11;
+    DpressedX -= Math.random(11,14);
+    //DpressedY -= 11;
+    DpressedY -= Math.random(11,14);
     
     gravity2+=0.6;
 
