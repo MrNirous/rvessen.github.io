@@ -218,9 +218,9 @@ function draw() {
     //release2.y+=gravity2;
     DpressedY+=gravity2;
     //DpressedX -= 13;
-    DpressedX -= Math.random(5,20);
+    DpressedX -= Math.random(5,13);
     //DpressedY -= 14;
-    DpressedY -= Math.random(5,20);
+    DpressedY -= Math.random(5,14);
     console.log(DpressedY);
     gravity2+=0.6;
 
