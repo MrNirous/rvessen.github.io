@@ -221,7 +221,7 @@ function draw() {
     DpressedX -= Math.random(5,20);
     //DpressedY -= 14;
     DpressedY -= Math.random(5,20);
-
+    console.log(DpressedY);
     gravity2+=0.6;
 
 
